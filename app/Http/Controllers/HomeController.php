@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function destory($id)
     {
         $user = User::find($id);
-        $nabe = Nabe::where('user_id', $user->id)->first();
+        $nabe = Nabe::where('user_id', $user->id);
         $nabe->delete();
 
         return redirect()->back();
